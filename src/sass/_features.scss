@@ -1,0 +1,48 @@
+.features{
+    grid-column: center-start / center-end;
+    margin:15rem 0 0 0;
+
+    background-image: linear-gradient(rgba(#fff, 0.92),rgba(#fff, 0.92)), url("../img/compound.svg");
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+
+    display: grid;
+    //grid-template-columns: repeat(3, 1fr);
+    //make columns as many fit inside grid element
+    //this will fit elements min width for each one is 25rem otherwise it will wrap it next line
+    grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+    gap: 6rem;
+
+    //this will force grid items to not stretch to parent size
+    align-items: start;
+
+    
+    &__svg {
+        grid-column: full-start / full-end;
+        margin-top: -2rem;
+        margin-bottom: -0.53px;
+        -webkit-transform: scale(-1);
+        transform: scale(-1);
+        
+    }
+}
+
+.feature{
+
+    display: grid;
+    grid-template-columns: min-content 1fr;
+    
+   grid-gap: 1.5rem 2.5rem;
+
+    &__icon{
+        fill: $color-primary;
+        width: 4.5rem;
+        height: 4.5rem;
+        grid-row: 1/ span 2;
+        transform: translateY(-1rem);
+    }
+    &__text{
+            font-size: 1.7rem;
+    }
+
+}
